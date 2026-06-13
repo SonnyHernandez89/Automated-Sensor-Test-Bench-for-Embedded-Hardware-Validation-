@@ -40,6 +40,10 @@ extern "C" void app_main(){
  if ( option >= 4 && memcmp(rx_buf, "T001", 4) == 0){
          std::cout << "Test T001 confirmed running test case..." << std::endl;
          Test1(); 
+      }else{
+
+        std::cout << "Test Case not selected" << std::endl;
+
       }
 
    
