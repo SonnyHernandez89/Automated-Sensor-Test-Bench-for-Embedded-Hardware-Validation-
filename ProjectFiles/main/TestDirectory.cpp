@@ -24,6 +24,7 @@ extern "C" void app_main(){
     std::cout << "Please Select a test to run below (enter test number i.e 'T001')" << std::endl;
     std::cout << std::endl;
     std::cout << "T001 Ping-Pong (computer to esp-32 communication test)" <<std::endl;
+    std::cout << "T002 I2C (ESP-32 can detect a sensor)" <<std::endl;
 
 
 
@@ -36,11 +37,18 @@ extern "C" void app_main(){
 
     
     std::string PingPong = "T001";
+    std::string inter2Ciruit = "T002";
     
  if ( option >= 4 && memcmp(rx_buf, "T001", 4) == 0){
          std::cout << "Test T001 confirmed running test case..." << std::endl;
          Test1(); 
-      }else{
+      }else if ( option >= 4 && memcmp(rx_buf, "T002", 4) == 0)
+      {
+        std::cout << "Test T002 confirmed running test case..." << std::endl;
+         Test2();
+      }
+      
+      else{
 
         std::cout << "Test Case not selected" << std::endl;
 
