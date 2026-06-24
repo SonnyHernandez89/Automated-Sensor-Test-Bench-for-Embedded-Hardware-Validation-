@@ -40,19 +40,19 @@ i2c_new_master_bus(&i2c_configuration, &bus_handle);
 std::cout << "T002 has been selected please wait while the register is obtain" << std::endl;
 int ms_timeout = 10000;
 
-for (uint16_t address = 0; address < 127; address++)
+for (uint16_t address = 0x08; address < 0x7F; address++)
 {
     esp_err_t addy_check = i2c_master_probe(bus_handle, address, ms_timeout );
     if (addy_check == ESP_OK)
     {
-        std::cout << "ADDRESS CAUGHT : "  << std::hex << address << std::endl;
+        std::cout << "ADDRESS CAUGHT : " <<"0x" << address << std::endl;
         break;
 
-    } else if (addy_check == ESP_ERR_NOT_FOUND && address == 126)
+    } else if (addy_check == ESP_ERR_NOT_FOUND && address == 0x7E)
     {
         std::cout << " hmmm something isn't right register not found " << std::endl;
 
-    }else if (addy_check == ESP_ERR_TIMEOUT && address == 126)
+    }else if (addy_check == ESP_ERR_TIMEOUT && address == 0x7E)
     {
         std::cout << " ERROR TIME RAN OUT REGISTER COULD NOTBE FOUND WITHIN THE ALLOCATED TIME CURRENT TIME SET :  " << ms_timeout << std::endl;
     }
