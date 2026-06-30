@@ -1,6 +1,16 @@
-# Automated-Sensor-Test-Bench-for-Embedded-Hardware-Validation-
-Small system  that automatically tests an embedded sensor module, measures its behavior, catches failures , and generates pass fail report 
+# Automated Sensor Test Bench for Embedded Hardware Validation
 
+This project is an ESP32-based hardware validation platform designed to test embedded sensor modules, verify communication, detect failures, and generate pass/fail results.
 
-ProjectFiles contain the code for ESP-IDF in c++ and also includes the first test "ping - pong"
-ASTBEHVV contain KiCAD files for fabrication the pcb should hold a ESP-32 with the I2C ports streched out a bit for sensor testing
+## Current Progress
+- Designed a custom KiCad PCB for sensor testing
+- Added fabrication files for PCB manufacturing
+- Built initial ESP-IDF C++ project structure
+- Completed first UART ping-pong communication test
+- Preparing I2C sensor validation tests
+
+## Tools Used
+ESP32, ESP-IDF, C++, KiCad, UART, I2C, Git/GitHub
+
+## Goal
+The goal of this project is to create a repeatable test bench for validating sensors through wiring, firmware testing, continuity checks, and documented pass/fail results.
